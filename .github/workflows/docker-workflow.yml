@@ -1,0 +1,17 @@
+name: Docker Workflow
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: docker://squidfunk/mkdocs-material
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the project
+      run: |
+        pip install -r requirements.txt
+        docker build --rm -it -v mkdocs-docker-actions .
+
