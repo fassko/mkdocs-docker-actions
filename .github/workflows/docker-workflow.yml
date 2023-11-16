@@ -12,4 +12,4 @@ jobs:
 
       - name: Build MkDocs Site
         run: |
-          docker run --rm -v ${{ github.workspace }}:/docs squidfunk/mkdocs-material build
+          docker run --rm -v ${{ github.workspace }}:/docs squidfunk/mkdocs-material build --strict
