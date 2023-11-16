@@ -12,6 +12,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the project
       run: |
-        pip install -r requirements.txt
         docker build --rm -it -v mkdocs-docker-actions .
 
