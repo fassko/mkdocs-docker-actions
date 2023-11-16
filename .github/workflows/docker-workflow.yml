@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run Docker Compose
+      - name: Build MkDocs Site
         run: |
-          docker-compose up -d
+          docker run --rm -v ${{ github.workspace }}:/docs squidfunk/mkdocs-material build
