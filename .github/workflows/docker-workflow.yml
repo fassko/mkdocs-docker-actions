@@ -6,11 +6,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: 
-      image: docker://squidfunk/mkdocs-material
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the project
-      run: |
-        docker build --rm -it -v mkdocs-docker-actions .
 
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run Docker Compose
+        run: |
+          docker-compose up -d
